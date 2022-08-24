@@ -1,0 +1,188 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  --PrimarytextVerydarkdesaturatedblue: hsl(238, 29%, 16%);
+  --PrimarytextSoftred: hsl(14, 88%, 65%);
+  --PrimarybackgroundSoftviolet: hsl(273, 75%, 66%);
+  --PrimarybackgroundSoftblue: hsl(240, 73%, 65%);
+  --NeutraltextVerydarkgrayishblue: hsl(237, 12%, 33%);
+  --NeutraltextDarkgrayishblue: hsl(240, 6%, 50%);
+  --NeutraldividerLightgrayishblue: hsl(240, 5%, 91%);
+  --fontsize: 12px;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  height: 100vh;
+  background: linear-gradient(
+    var(--PrimarybackgroundSoftviolet),
+    var(--PrimarybackgroundSoftblue)
+  );
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 799px) {
+  body {
+    padding: 0 15px;
+  }
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 800px) {
+  .container {
+    width: 780px;
+  }
+}
+
+@media (max-width: 799px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+.container {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  position: relative;
+}
+
+.container > img {
+  position: absolute;
+  top: 38%;
+  right: 87%;
+  z-index: 1;
+}
+
+@media (max-width: 799px) {
+  .container > img {
+    display: none;
+  }
+}
+
+.container .image {
+  background-image: url(../photos/bg-pattern-desktop.svg);
+  background-size: 200%;
+  height: 500px;
+  background-position: -410px -218px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+@media (max-width: 799px) {
+  .container .image {
+    background-image: url(../photos/bg-pattern-mobile.svg);
+    height: 90px;
+    overflow: visible;
+    background-position: 50% 0px;
+    background-size: contain;
+  }
+}
+
+.container .image .box {
+  width: 430px;
+  height: 430px;
+  background-image: url(../photos/illustration-woman-online-desktop.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 7%;
+  bottom: 0%;
+}
+
+@media (max-width: 799px) {
+  .container .image .box {
+    background-image: url(../photos/illustration-woman-online-mobile.svg);
+    width: 200px;
+    height: 200px;
+    right: 50%;
+    transform: translateX(50%);
+    bottom: -28%;
+  }
+}
+
+.container .faq {
+  padding: 60px 50px 60px 10px;
+}
+
+@media (max-width: 799px) {
+  .container .faq {
+    padding: 5px 10px 50px 10px;
+  }
+  .container .faq > h1 {
+    text-align: center;
+  }
+}
+
+.container .faq .question {
+  border-color: transparent transparent var(--NeutraldividerLightgrayishblue)
+    transparent;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.container .faq .activex {
+  overflow: hidden;
+  height: 50px;
+  transition: 0.3s;
+}
+
+@media (max-width: 799px) {
+  .container .faq .activex {
+    height: 47px;
+  }
+}
+
+.container .faq .active {
+  overflow: visible;
+  height: 100px;
+  transition: 0.3s;
+}
+
+.container .faq .answer {
+  font-size: var(--fontsize);
+  color: var(--NeutraltextDarkgrayishblue);
+  margin-top: 0;
+}
+
+.container .faq .question.active .arrow {
+  transform: rotateZ(180deg);
+  transition: 0.3s;
+}
+
+.container .faq .question .appear {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .faq .question .appear > p {
+  cursor: pointer;
+  transition: 0.3s;
+}
+@media (max-width: 799px) {
+  .container .faq .question .appear > p {
+    font-size: 14px;
+  }
+}
+
+.container .faq .question .appear > img {
+  cursor: pointer;
+}
+
+.container .faq .question .appear > p:hover {
+  color: var(--PrimarytextSoftred);
+}
