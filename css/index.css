@@ -57,6 +57,7 @@ body {
   align-items: center;
   border-radius: 25px;
   position: relative;
+  box-shadow: 0px 3px 20px #00000020;
 }
 
 .container > img {
@@ -156,6 +157,7 @@ body {
   font-size: var(--fontsize);
   color: var(--NeutraltextDarkgrayishblue);
   margin-top: 0;
+  font-weight: 400 !important;
 }
 
 .container .faq .question.active .arrow {

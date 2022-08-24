@@ -10,6 +10,7 @@ faq.onclick = function (e) {
   question.forEach(function (e) {
     e.classList.remove("active");
     e.classList.add("activex");
+    e.style.fontWeight = "400";
   });
   if (
     e.target.classList.contains("questions") ||
@@ -17,5 +18,6 @@ faq.onclick = function (e) {
   ) {
     e.target.parentElement.parentElement.classList.toggle("active");
     e.target.parentElement.parentElement.classList.toggle("activex");
+    e.target.parentElement.parentElement.style.fontWeight = "700";
   }
 };
